@@ -1,0 +1,218 @@
+<!-- <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Sign up</button>
+      </form>
+    </div>
+  </div> -->
+
+{% load crispy_forms_tags %}
+{% load static %}
+<style>
+  input {
+    border-color: black;
+  }
+</style>
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+    <div class="d-flex justify-content-center" style="margin-top: 5%; margin-bottom: 3%;">
+      <div class=" card justify-content-center" style="width: 50%; padding:5%">
+        <img src="https://i.postimg.cc/vBmgkchD/undraw-refreshing-beverage-td3r.png" alt="Paperpillar Mascot" height="300px" width="300px" style="margin: auto;">
+            <h2>H2R2</h2>
+            <form method="post">
+              {% csrf_token %}
+              {{form.email|as_crispy_field}}
+              {{form.username|as_crispy_field}}
+              {{form.password1|as_crispy_field}}
+              {{form.password2|as_crispy_field}}
+              <button style="background-color:#1089B8" type="submit" class="btn btn-success">Signup</button>
+            </form> 
+      </div>
+    </div>
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: white;">
+        <p> Copyright &copy; 2022-<script>document.write(new Date().getFullYear())</script> H2R2 All Rights Reserved</p>
+      </div>
+    </footer>
+</html> -->
+
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>H2R2</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}"/>
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap-5.0.0-alpha-2.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/LineIcons.2.0.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/tiny-slider.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/glightbox.min.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/lindy-uikit.css' %}"/>
+  </head>
+  <body style="background-color: whitesmoke;">
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+
+		<!-- ========================= signup-style-1 start ========================= -->
+      <center><img src="{% static '/img/logo/logot.svg' %}" alt="Logo" style="width: 400px; height:auto;"/></center>
+      <section class="signup signup-style-1 mb-80" style="background-color: whitesmoke; margin-top:-2%;" >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="signup-content-wrapper">
+              <div class="section-title">
+                <h3 class="mb-20">Sign Up</h3>
+                <p>Get your water tested now!</p>
+              </div>
+              <div class="image">
+                <img src="{% static '/img/signup/signup-1/signup-img.svg' %} " alt="" class="w-100">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="signup-form-wrapper">
+              <form method="post" class="signup-form">
+                {% csrf_token %}
+                <div class="single-input">
+                  {{form.username|as_crispy_field}}
+                </div>
+                <div class="single-input">
+                  {{form.email|as_crispy_field}}
+                </div>
+                <div class="single-input">
+                  {{form.password1|as_crispy_field}}
+                </div>
+                <div class="single-input">
+                  {{form.password2|as_crispy_field}}
+                </div>
+                <div class="signup-button mb-25">
+                  <button class="button button-lg radius-10 btn-block" type="submit">Sign up</button>
+                </div>
+                <p>Already have an account? <a href="{% url 'login' %}">Log In</a> </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		<!-- ========================= signup-style-1 end ========================= -->
+
+        <!-- ========================= JS here ========================= -->
+        <script src="{% static '/js/bootstrap.5.0.0.alpha-2-min.js' %}"></script>
+        <script src="{% static '/js/tiny-slider.js' %}"></script>
+        <script src="{% static '/js/count-up.min.js' %}"></script>
+        <script src="{% static '/js/imagesloaded.min.js' %}"></script>
+        <script src="{% static '/js/isotope.min.js' %}"></script>
+        <script src="{% static '/js/wow.min.js' %}"></script>
+        <script src="{% static '/js/main.js' %}"></script>
+    
+        <script>
+    
+          // ============= video popup
+          GLightbox({
+            'href': 'static/video/video.mp4',
+            'type': 'video',
+            'source': 'local', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+          });
+    
+          // header-2  toggler-icon
+          let navbarToggler2 = document.querySelector(".header-2 .navbar-toggler");
+          var navbarCollapse2 = document.querySelector(".header-2 .navbar-collapse");
+    
+          document.querySelectorAll(".header-2 .page-scroll").forEach(e =>
+              e.addEventListener("click", () => {
+                  navbarToggler2.classList.remove("active");
+                  navbarCollapse2.classList.remove('show')
+              })
+          );
+          navbarToggler2.addEventListener('click', function() {
+              navbarToggler2.classList.toggle("active");
+          })
+          
+    
+          // header-4  toggler-icon
+          let navbarToggler4 = document.querySelector(".header-4 .navbar-toggler");
+          var navbarCollapse4 = document.querySelector(".header-4 .navbar-collapse");
+    
+          document.querySelectorAll(".header-4 .page-scroll").forEach(e =>
+              e.addEventListener("click", () => {
+                  navbarToggler4.classList.remove("active");
+                  navbarCollapse4.classList.remove('show')
+              })
+          );
+          navbarToggler4.addEventListener('click', function() {
+              navbarToggler4.classList.toggle("active");
+          }) 
+    
+        </script>
+      </body>
+      		<!-- ========================= footer style-1 start ========================= -->
+    <footer class="footer footer-style-1 mb-80" style="margin-bottom: 0%; margin-top:6%;">
+      <div class="container">
+        <div class="widget-wrapper">
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <div class="logo">
+                  <a href="#0"> <img src="assets/img/logo/logo.svg" alt=""> </a>
+                </div>
+                <p class="desc">Track the quality of your water with our simple and comprehensive reports.</p>
+                <ul class="socials">
+                  <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h6>Quick Link</h6>
+                <ul class="links">
+                  <li> <a href="{% url 'home' %}">Home</a> </li>
+                  <li> <a href="{% url 'home' %}#about">About</a> </li>
+                  <li> <a href="{% url 'home' %}#feature">Feature</a> </li>
+                  <li> <a href="{% url 'home' %}#contact">Contact</a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-wrapper">
+          <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> H2R2 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    </html>

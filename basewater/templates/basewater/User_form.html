@@ -1,0 +1,19 @@
+{% extends 'basewater/base.html' %}
+{% load crispy_forms_tags %}  
+{% block content %}
+
+<div class="card" style="margin-top: 5%; margin-left:10%; margin-right:10%">
+  <div class="card-header"> Update Profile.</div>
+  <center><img src="https://i.postimg.cc/cLcCzqxF/undraw-personal-information-re-vw8a.png" style="height: auto; width:50%" class="card-img-top" alt="..."></center>
+  <form method="post" class="signup-form">
+    {% csrf_token %}
+    <div class="single-input" style="padding-left: 5%; padding-right: 5%; padding-top: 1%">
+      {{form | crispy}}
+    </div>
+    <div class="signup-button mb-25" style="padding-left: 5%; padding-right: 5%; padding-top: 5%">
+      <button class="button button-lg radius-10 btn-block" type="submit" >Update Profile</button>
+    </div>
+</form>
+</div>
+
+{% endblock %}  

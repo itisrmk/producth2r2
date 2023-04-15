@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>H2R2</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/img/favicon.ico' %}"/>
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap-5.0.0-alpha-2.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/LineIcons.2.0.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/tiny-slider.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/glightbox.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/lindy-uikit.css' %}" />
+  </head>
+  <body style="background: #FFFFFF">
+  {% include 'basewater/messages.html' %}
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+
+
+
+
+
+      <!-- ========================= header-2 start ========================= -->
+  <header class="header header-2 mb-30" style="margin-top: -3%;">
+    <div class="navbar-area" style="padding-bottom: 0%;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="{% url 'report' %}">
+                <img src="{% static '/img/logo/logot.svg' %}" alt="Logo" style="width:400; height:400; viewBox:0 0 200 200"/>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2"
+                aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                <ul id="nav2" class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="page-scroll" href="{% url 'report' %}">Reports</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="{% url 'schdule' %}">Schedule</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" href="{% url 'updateprofile' %}">Profile</a>
+                  </li>
+                </ul>
+                <a href="{% url 'logout' %}" class="button button-sm d-none d-lg-flex">Logout</a>
+              </div>
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- navbar area -->
+  </header>
+  <!-- ========================= header-2 end ========================= -->
+
+
+  {% block content %}
+  {% endblock %}
+
+
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{% static '/js/bootstrap.5.0.0.alpha-2-min.js' %}"></script>
+    <script src="{% static '/js/tiny-slider.js' %}"></script>
+    <script src="{% static '/js/count-up.min.js' %}"></script>
+    <script src="{% static '/js/imagesloaded.min.js' %}"></script>
+    <script src="{% static '/js/isotope.min.js' %}"></script>
+    <script src="{% static '/js/wow.min.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+      //===== header-1 toggler-icon
+      let navbarToggler = document.querySelector(".header-1 .navbar-toggler");
+      var navbarCollapse = document.querySelector(".header-1 .navbar-collapse");
+
+      document.querySelectorAll(".header-1 .page-scroll").forEach(e =>
+          e.addEventListener("click", () => {
+              navbarToggler.classList.remove("active");
+              navbarCollapse.classList.remove('show')
+          })
+      );
+      navbarToggler.addEventListener('click', function() {
+          navbarToggler.classList.toggle("active");
+      })
+      
+
+      // header-2  toggler-icon
+      let navbarToggler2 = document.querySelector(".header-2 .navbar-toggler");
+      var navbarCollapse2 = document.querySelector(".header-2 .navbar-collapse");
+
+      document.querySelectorAll(".header-2 .page-scroll").forEach(e =>
+          e.addEventListener("click", () => {
+              navbarToggler2.classList.remove("active");
+              navbarCollapse2.classList.remove('show')
+          })
+      );
+      navbarToggler2.addEventListener('click', function() {
+          navbarToggler2.classList.toggle("active");
+      })
+    
+    </script>
+  </body>
+
+		<!-- ========================= footer style-1 start ========================= -->
+    <footer class="footer footer-style-1 mb-80" style="margin-bottom: 0%; margin-top:20%;">
+      <div class="container">
+        <div class="widget-wrapper">
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <div class="logo">
+                  <a href="#0"> <img src="assets/img/logo/logo.svg" alt=""> </a>
+                </div>
+                <p class="desc">Track the quality of your water with our simple and comprehensive reports.</p>
+                <ul class="socials">
+                  <li> <a href="#0"> <i class="lni lni-facebook-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
+                  <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h6>Quick Link</h6>
+                <ul class="links">
+                  <li> <a href="{% url 'home' %}">Home</a> </li>
+                  <li> <a href="{% url 'home' %}#about">About</a> </li>
+                  <li> <a href="{% url 'home' %}#feature">Feature</a> </li>
+                  <li> <a href="{% url 'home' %}#contact">Contact</a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright-wrapper">
+          <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> H2R2 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+
+</html>
