@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
+import dj_database_url
 import django_heroku
 django_heroku.settings(locals())
 
@@ -98,9 +99,12 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
+DATABASES['default'] = dj_database_url.config(
+    default='postgres://ubkjiopyqawaga:f0d128e7f749a9662938cbff847c999d68296552d6a7146cd492e76c185a4ed5@ec2-3-232-103-50.compute-1.amazonaws.com:5432/df3ronrop11q87',
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
