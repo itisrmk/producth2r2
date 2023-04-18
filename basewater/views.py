@@ -42,7 +42,7 @@ def test(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data["email"]
-            from_email = 'h2r2contact@gmail.com'
+            from_email = 'rmkashya@asu.edu'
             email = 'rmkashya@asu.edu'
             message = form.cleaned_data['message']
             try:
