@@ -102,7 +102,7 @@ class WorkerSignUpView(CreateView):
         user = form.save()
         htmly = get_template('basewater/Email.html')
         d = { 'username': user }
-        subject, from_email, to = 'welcome', 'h2r2contact@gmail.com', user.email
+        subject, from_email, to = 'welcome', 'rmkashya@asu.edu', user.email
         html_content = htmly.render(d)
         msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
