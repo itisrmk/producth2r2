@@ -43,7 +43,7 @@ def test(request):
         if form.is_valid():
             subject = form.cleaned_data["email"]
             from_email = 'rmkashya@asu.edu'
-            email = 'rmkashya@asu.edu'
+            email = 'h2r2contact@gmail.com'
             message = form.cleaned_data['message']
             try:
                 send_mail(subject, message, from_email, [email])
