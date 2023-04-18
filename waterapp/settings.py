@@ -155,7 +155,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST="smtp.elasticemail.com"
-EMAIL_PORT=2525
+EMAIL_PORT=25
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER = 'rmkashya@asu.edu'
 EMAIL_HOST_PASSWORD = '4F44E82132FED93C177A4D8BD129BD9242DC'
