@@ -154,8 +154,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST="mail.smtp2go.com"
-EMAIL_PORT=2525
+EMAIL_HOST="smtp.sendgrid.net"
+EMAIL_PORT=25
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER = 'h2r2contact@gmail.com'
-EMAIL_HOST_PASSWORD = '7bvTDZ5X6k1Q7Gkz'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
